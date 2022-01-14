@@ -9,6 +9,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Bussines.Notificacos;
+using Bussines.Services;
 
 namespace App
 {
@@ -43,6 +45,10 @@ namespace App
             services.AddScoped<IProdutoRepository, ProdutoRepository>();
             services.AddScoped<IFornecedorRepository, FornecedorRepository>();
             services.AddScoped<IEnderecoRepository, EnderecoRepository>();
+
+            services.AddScoped<INotificador, Notificador>();
+            services.AddScoped<IFornecedorService, FornecedorService>();
+            services.AddScoped<IProdutoService, ProdutoService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
