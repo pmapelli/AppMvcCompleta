@@ -3,6 +3,7 @@ using System.ComponentModel;
 using Microsoft.AspNetCore.Http;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using App.Extensions;
 
 namespace App.ViewModels
 {
@@ -22,6 +23,7 @@ namespace App.ViewModels
         public string Descricao { get; set; }
         public IFormFile ImagemUpload { get; set; }
         public string Imagem { get; set; }
+        [Moeda]
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
         public decimal Valor { get; set; }
         public DateTime DataCadastro { get; set; }
