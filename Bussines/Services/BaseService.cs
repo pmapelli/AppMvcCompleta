@@ -17,7 +17,6 @@ namespace Business.Services
 
         protected void Notificar(ValidationResult validationResult)
         {
-
             foreach (var error in validationResult.Errors)
             {
                 Notificar(error.ErrorMessage);
